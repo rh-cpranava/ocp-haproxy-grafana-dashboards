@@ -16,8 +16,8 @@
   "editable": true,
   "gnetId": 367,
   "graphTooltip": 1,
-  "id": 3,
-  "iteration": 1653373415772,
+  "id": 4,
+  "iteration": 1653378471227,
   "links": [],
   "panels": [
     {
@@ -88,7 +88,7 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "irate(haproxy_server_http_responses_total{backend=~\"$backend\", server=~\"$server\", code=~\"$code\", alias=\"$alias\"}[180s])",
+          "expr": "irate(haproxy_server_http_responses_total{pod=~\"$router\", backend=~\"$backend\", server=~\"$server\", code=~\"$code\", alias=\"$alias\"}[180s])",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "{{ pod }}/{{ exported_pod }}/{{ code }}",
@@ -191,7 +191,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "avg(haproxy_server_check_duration_milliseconds{backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}) without (alias)",
+          "expr": "avg(haproxy_server_check_duration_milliseconds{pod=~\"$router\", backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}) without (alias)",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "{{ pod }}/{{ exported_pod }}",
@@ -294,7 +294,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(haproxy_server_check_failures_total{backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
+          "expr": "irate(haproxy_server_check_failures_total{pod=~\"$router\", backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "{{ pod }}/{{ exported_pod }}",
@@ -397,7 +397,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(haproxy_server_downtime_seconds_total{backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
+          "expr": "irate(haproxy_server_downtime_seconds_total{pod=~\"$router\", backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "{{ pod }}/{{ exported_pod }}",
@@ -500,7 +500,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(haproxy_server_redispatch_warnings_total{backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
+          "expr": "irate(haproxy_server_redispatch_warnings_total{pod=~\"$router\", backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "{{ pod }}/{{ exported_pod }}",
@@ -603,7 +603,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(haproxy_server_response_errors_total{backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
+          "expr": "irate(haproxy_server_response_errors_total{pod=~\"$router\", backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "{{ pod }}/{{ exported_pod }}",
@@ -706,7 +706,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(haproxy_server_retry_warnings_total{backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
+          "expr": "irate(haproxy_server_retry_warnings_total{pod=~\"$router\", backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "{{ pod }}/{{ exported_pod }}",
@@ -824,7 +824,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(haproxy_server_bytes_in_total{backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
+          "expr": "irate(haproxy_server_bytes_in_total{pod=~\"$router\", backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "{{ pod }}/{{ exported_pod }}",
@@ -927,7 +927,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(haproxy_server_bytes_out_total{backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
+          "expr": "irate(haproxy_server_bytes_out_total{pod=~\"$router\", backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "{{ pod }}/{{ exported_pod }}",
@@ -1050,7 +1050,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(haproxy_server_connections_total{backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
+          "expr": "irate(haproxy_server_connections_total{pod=~\"$router\", backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "{{ pod }}/{{ exported_pod }}",
@@ -1158,7 +1158,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(haproxy_server_connection_errors_total{backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
+          "expr": "irate(haproxy_server_connection_errors_total{pod=~\"$router\", backend=~\"$backend\", server=~\"$server\", alias=\"$alias\"}[180s])",
           "interval": "$interval",
           "intervalFactor": 1,
           "legendFormat": "{{ pod }}/{{ exported_pod }}",
@@ -2119,6 +2119,7 @@
           }
         ],
         "query": "1m,5m,1h,6h,1d",
+        "queryValue": "",
         "refresh": 2,
         "skipUrlSync": false,
         "type": "interval"
@@ -2126,7 +2127,6 @@
       {
         "allValue": null,
         "current": {
-          "isNone": true,
           "selected": false,
           "text": "None",
           "value": ""
@@ -2135,7 +2135,7 @@
         "definition": "",
         "description": null,
         "error": null,
-        "hide": 0,
+        "hide": 2,
         "includeAll": false,
         "label": "Load Balancer",
         "multi": false,
@@ -2159,22 +2159,26 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": "Prometheus",
-        "definition": "",
+        "definition": "label_values(haproxy_server_bytes_in_total{}, backend)",
         "description": null,
         "error": null,
-        "hide": 0,
+        "hide": 2,
         "includeAll": true,
         "label": "Backend",
         "multi": true,
         "name": "backend",
         "options": [],
         "query": {
-          "query": "label_values(haproxy_server_bytes_in_total{alias=\"$alias\"}, backend)",
-          "refId": "Prometheus-backend-Variable-Query"
+          "query": "label_values(haproxy_server_bytes_in_total{}, backend)",
+          "refId": "StandardVariableQuery"
         },
         "refresh": 1,
         "regex": "",
@@ -2189,23 +2193,28 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "selected": true,
+          "tags": [],
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": "Prometheus",
-        "definition": "",
+        "definition": "label_values(haproxy_server_bytes_in_total{backend=~\"$backend\"}, server)",
         "description": null,
         "error": null,
         "hide": 0,
         "includeAll": true,
-        "label": "Server",
+        "label": "Pod",
         "multi": true,
         "name": "server",
         "options": [],
         "query": {
-          "query": "label_values(haproxy_server_bytes_in_total{alias=\"$alias\", backend=~\"$backend\"}, server)",
-          "refId": "Prometheus-server-Variable-Query"
+          "query": "label_values(haproxy_server_bytes_in_total{backend=~\"$backend\"}, server)",
+          "refId": "StandardVariableQuery"
         },
         "refresh": 1,
         "regex": "",
@@ -2220,12 +2229,17 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "All",
-          "value": "$__all"
+          "selected": true,
+          "tags": [],
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": "Prometheus",
-        "definition": "",
+        "definition": "label_values(haproxy_server_http_responses_total{backend=~\"$backend\", server=~\"$server\"}, code)",
         "description": null,
         "error": null,
         "hide": 0,
@@ -2235,8 +2249,44 @@
         "name": "code",
         "options": [],
         "query": {
-          "query": "label_values(haproxy_server_http_responses_total{alias=\"$alias\", backend=~\"$backend\", server=~\"$server\"}, code)",
-          "refId": "Prometheus-code-Variable-Query"
+          "query": "label_values(haproxy_server_http_responses_total{backend=~\"$backend\", server=~\"$server\"}, code)",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": null,
+        "tags": [],
+        "tagsQuery": null,
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "tags": [],
+          "text": [
+            "router-default-7d49d7d6db-54mw7"
+          ],
+          "value": [
+            "router-default-7d49d7d6db-54mw7"
+          ]
+        },
+        "datasource": "Prometheus",
+        "definition": "label_values(haproxy_server_bytes_in_total{}, pod)",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": "Router Pod",
+        "multi": true,
+        "name": "router",
+        "options": [],
+        "query": {
+          "query": "label_values(haproxy_server_bytes_in_total{}, pod)",
+          "refId": "StandardVariableQuery"
         },
         "refresh": 1,
         "regex": "",
@@ -2280,7 +2330,7 @@
     ]
   },
   "timezone": "browser",
-  "title": "HAproxy Servers | HAproxy",
-  "uid": "ziLRGjunk",
-  "version": 2
+  "title": "HAproxy Servers | HAproxy New",
+  "uid": "ziLRGjunkaaa",
+  "version": 28
 }
